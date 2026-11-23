@@ -1,0 +1,1728 @@
+﻿{
+ "tables": [
+  {
+   "name": "tblUsers",
+   "fields": [
+    {
+     "name": "UserID",
+     "type": 4,
+     "autoNumber": true,
+     "caption": "الرقم"
+    },
+    {
+     "name": "WinUser",
+     "type": 10,
+     "size": 50,
+     "required": true,
+     "caption": "اسم المستخدم في الجهاز"
+    },
+    {
+     "name": "FullName",
+     "type": 10,
+     "size": 100,
+     "required": true,
+     "caption": "الاسم"
+    },
+    {
+     "name": "RankTitle",
+     "type": 10,
+     "size": 50,
+     "caption": "الرتبة والصفة"
+    },
+    {
+     "name": "IsExaminer",
+     "type": 1,
+     "defaultValue": "True",
+     "caption": "فاحص"
+    },
+    {
+     "name": "IsReviewer",
+     "type": 1,
+     "defaultValue": "False",
+     "caption": "مراجِع"
+    },
+    {
+     "name": "IsApprover",
+     "type": 1,
+     "defaultValue": "False",
+     "caption": "معتمد"
+    },
+    {
+     "name": "IsAdmin",
+     "type": 1,
+     "defaultValue": "False",
+     "caption": "مسؤول البرنامج"
+    },
+    {
+     "name": "IsActive",
+     "type": 1,
+     "defaultValue": "True",
+     "caption": "فعال"
+    },
+    {
+     "name": "SignaturePath",
+     "type": 10,
+     "size": 255,
+     "caption": "مسار التوقيع"
+    }
+   ],
+   "indexes": [
+    {
+     "name": "pkUsers",
+     "primary": true,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "UserID"
+     ]
+    },
+    {
+     "name": "uxUsersWin",
+     "primary": false,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "WinUser"
+     ]
+    }
+   ],
+   "rows": [
+    "INSERT INTO [tblUsers] ([UserID],[WinUser],[FullName],[RankTitle],[IsExaminer],[IsReviewer],[IsApprover],[IsAdmin],[IsActive],[SignaturePath]) VALUES (1,'بوسلطان','يوسف موسى محمد','نقيب',True,True,True,True,True,'assets\\signatures\\بوسلطان.bmp')",
+    "INSERT INTO [tblUsers] ([UserID],[WinUser],[FullName],[RankTitle],[IsExaminer],[IsReviewer],[IsApprover],[IsAdmin],[IsActive],[SignaturePath]) VALUES (2,'TEST1','سيد الهاشمي','العريف اول',True,True,True,True,True,Null)",
+    "INSERT INTO [tblUsers] ([UserID],[WinUser],[FullName],[RankTitle],[IsExaminer],[IsReviewer],[IsApprover],[IsAdmin],[IsActive],[SignaturePath]) VALUES (3,'TEST_R1','سيد الهاشمي','العريف اول',True,True,True,True,True,'assets\\signatures\\TEST_R1.bmp')",
+    "INSERT INTO [tblUsers] ([UserID],[WinUser],[FullName],[RankTitle],[IsExaminer],[IsReviewer],[IsApprover],[IsAdmin],[IsActive],[SignaturePath]) VALUES (4,'TEST_R2','مراجِع وهمي 2','مراجِع',True,True,True,True,True,'assets\\signatures\\TEST_R2.bmp')",
+    "INSERT INTO [tblUsers] ([UserID],[WinUser],[FullName],[RankTitle],[IsExaminer],[IsReviewer],[IsApprover],[IsAdmin],[IsActive],[SignaturePath]) VALUES (5,'TEST_A1','محمد ثاني','الرائد خبير',False,False,True,False,True,'assets\\signatures\\TEST_A1.bmp')"
+   ]
+  },
+  {
+   "name": "tblAgencies",
+   "fields": [
+    {
+     "name": "AgencyID",
+     "type": 4,
+     "autoNumber": true,
+     "caption": "الرقم"
+    },
+    {
+     "name": "AgencyName",
+     "type": 10,
+     "size": 150,
+     "required": true,
+     "caption": "الجهة"
+    },
+    {
+     "name": "IsActive",
+     "type": 1,
+     "defaultValue": "True",
+     "caption": "فعال"
+    }
+   ],
+   "indexes": [
+    {
+     "name": "pkAgencies",
+     "primary": true,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "AgencyID"
+     ]
+    },
+    {
+     "name": "uxAgencyName",
+     "primary": false,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "AgencyName"
+     ]
+    }
+   ],
+   "rows": [
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (1,'مركز شرطة بردبي',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (2,'مركز شرطة البرشاء',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (3,'مركز شرطة نايف',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (4,'مركز شرطة ندالشبا',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (5,'مركز شرطة الموانئ',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (6,'مركز شرطة جبل علي',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (7,'مركز شرطة القصيص',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (8,'مركز شرطة المرقبات',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (9,'مركز شرطة الرفاعة',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (10,'مركز شرطة الراشدية',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (11,'مركز شرطة حتا',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (12,'مركز شرطة لهباب',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (13,'مركز شرطة الفقع',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (14,'مركز شرطة الخوانيج',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (15,'الإدارة العامة للتحريات والمباحث الجنائية',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (16,'الإدارة العامة للمخدرات',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (17,'الإدارة العامة لأمن المطارات',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (18,'إدارة الطب الشرعي',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (19,'الإدارة العامة لأمن الهيئات والمنشئات',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (20,'شرطة عجمان',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (21,'شرطة الشارقة',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (22,'شرطة أم القيوين',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (23,'شرطة رأس الخيمة',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (24,'شرطة الفجيرة',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (25,'نيابة دبي',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (26,'نيابة أبو ظبي',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (27,'نيابة عجمان',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (28,'نيابة أم القيوين',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (29,'نيابة الشارقة',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (30,'نيابة الفجيرة',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (31,'نيابة رأس الخيمة',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (32,'جمارك دبي',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (33,'المكتب التنظيمي القيادة',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (34,'محكمة رأس الخيمة',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (35,'محكمة دبي',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (36,'محكمة عجمان',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (37,'محكمة الشارقة',True)",
+    "INSERT INTO [tblAgencies] ([AgencyID],[AgencyName],[IsActive]) VALUES (38,'الإدارة العامة لأمن الدولة',True)"
+   ]
+  },
+  {
+   "name": "tblIncidentTypes",
+   "fields": [
+    {
+     "name": "IncidentTypeID",
+     "type": 4,
+     "autoNumber": true,
+     "caption": "الرقم"
+    },
+    {
+     "name": "IncidentTypeName",
+     "type": 10,
+     "size": 100,
+     "required": true,
+     "caption": "نوع الحادث"
+    },
+    {
+     "name": "IsActive",
+     "type": 1,
+     "defaultValue": "True",
+     "caption": "فعال"
+    }
+   ],
+   "indexes": [
+    {
+     "name": "pkIncidentTypes",
+     "primary": true,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "IncidentTypeID"
+     ]
+    },
+    {
+     "name": "uxIncidentTypeName",
+     "primary": false,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "IncidentTypeName"
+     ]
+    }
+   ],
+   "rows": [
+    "INSERT INTO [tblIncidentTypes] ([IncidentTypeID],[IncidentTypeName],[IsActive]) VALUES (1,'الاتلاف',True)",
+    "INSERT INTO [tblIncidentTypes] ([IncidentTypeID],[IncidentTypeName],[IsActive]) VALUES (2,'الاحتيال',True)",
+    "INSERT INTO [tblIncidentTypes] ([IncidentTypeID],[IncidentTypeName],[IsActive]) VALUES (3,'الاستيلاء',True)",
+    "INSERT INTO [tblIncidentTypes] ([IncidentTypeID],[IncidentTypeName],[IsActive]) VALUES (4,'الاسحلة والمتفجرات',True)",
+    "INSERT INTO [tblIncidentTypes] ([IncidentTypeID],[IncidentTypeName],[IsActive]) VALUES (5,'الاشتباه',True)",
+    "INSERT INTO [tblIncidentTypes] ([IncidentTypeID],[IncidentTypeName],[IsActive]) VALUES (6,'الاعتداء',True)",
+    "INSERT INTO [tblIncidentTypes] ([IncidentTypeID],[IncidentTypeName],[IsActive]) VALUES (7,'الانتحار',True)",
+    "INSERT INTO [tblIncidentTypes] ([IncidentTypeID],[IncidentTypeName],[IsActive]) VALUES (8,'التزوير',True)",
+    "INSERT INTO [tblIncidentTypes] ([IncidentTypeID],[IncidentTypeName],[IsActive]) VALUES (9,'التهديد',True)",
+    "INSERT INTO [tblIncidentTypes] ([IncidentTypeID],[IncidentTypeName],[IsActive]) VALUES (10,'الحريق',True)",
+    "INSERT INTO [tblIncidentTypes] ([IncidentTypeID],[IncidentTypeName],[IsActive]) VALUES (11,'الخطف',True)",
+    "INSERT INTO [tblIncidentTypes] ([IncidentTypeID],[IncidentTypeName],[IsActive]) VALUES (12,'السرقات',True)",
+    "INSERT INTO [tblIncidentTypes] ([IncidentTypeID],[IncidentTypeName],[IsActive]) VALUES (13,'السقوط',True)",
+    "INSERT INTO [tblIncidentTypes] ([IncidentTypeID],[IncidentTypeName],[IsActive]) VALUES (14,'الطعن',True)",
+    "INSERT INTO [tblIncidentTypes] ([IncidentTypeID],[IncidentTypeName],[IsActive]) VALUES (15,'العثور',True)",
+    "INSERT INTO [tblIncidentTypes] ([IncidentTypeID],[IncidentTypeName],[IsActive]) VALUES (16,'القتل',True)",
+    "INSERT INTO [tblIncidentTypes] ([IncidentTypeID],[IncidentTypeName],[IsActive]) VALUES (17,'الهروب من رجال الأمن',True)",
+    "INSERT INTO [tblIncidentTypes] ([IncidentTypeID],[IncidentTypeName],[IsActive]) VALUES (18,'الوفاة',True)",
+    "INSERT INTO [tblIncidentTypes] ([IncidentTypeID],[IncidentTypeName],[IsActive]) VALUES (19,'انتحال',True)",
+    "INSERT INTO [tblIncidentTypes] ([IncidentTypeID],[IncidentTypeName],[IsActive]) VALUES (20,'انتهاك حرمة ملك الغير',True)",
+    "INSERT INTO [tblIncidentTypes] ([IncidentTypeID],[IncidentTypeName],[IsActive]) VALUES (21,'أخرى',True)",
+    "INSERT INTO [tblIncidentTypes] ([IncidentTypeID],[IncidentTypeName],[IsActive]) VALUES (22,'خيانة الأمانة',True)",
+    "INSERT INTO [tblIncidentTypes] ([IncidentTypeID],[IncidentTypeName],[IsActive]) VALUES (23,'فحص جثة',True)",
+    "INSERT INTO [tblIncidentTypes] ([IncidentTypeID],[IncidentTypeName],[IsActive]) VALUES (24,'فحوصات',True)",
+    "INSERT INTO [tblIncidentTypes] ([IncidentTypeID],[IncidentTypeName],[IsActive]) VALUES (25,'قضايا الخمور',True)",
+    "INSERT INTO [tblIncidentTypes] ([IncidentTypeID],[IncidentTypeName],[IsActive]) VALUES (26,'قضايا المخدرات',True)",
+    "INSERT INTO [tblIncidentTypes] ([IncidentTypeID],[IncidentTypeName],[IsActive]) VALUES (27,'قضايا جنسية',True)",
+    "INSERT INTO [tblIncidentTypes] ([IncidentTypeID],[IncidentTypeName],[IsActive]) VALUES (28,'قضايا مرورية',True)",
+    "INSERT INTO [tblIncidentTypes] ([IncidentTypeID],[IncidentTypeName],[IsActive]) VALUES (29,'مزاولة مهنة بدون ترخيص',True)"
+   ]
+  },
+  {
+   "name": "tblResults",
+   "fields": [
+    {
+     "name": "ResultID",
+     "type": 4,
+     "required": true,
+     "caption": "الرقم"
+    },
+    {
+     "name": "ResultName",
+     "type": 10,
+     "size": 30,
+     "required": true,
+     "caption": "النتيجة"
+    },
+    {
+     "name": "ReportLabel",
+     "type": 10,
+     "size": 30,
+     "caption": "في التقرير"
+    }
+   ],
+   "indexes": [
+    {
+     "name": "pkResults",
+     "primary": true,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "ResultID"
+     ]
+    }
+   ],
+   "rows": [
+    "INSERT INTO [tblResults] ([ResultID],[ResultName],[ReportLabel]) VALUES (1,'إيجابية','إيجابية')",
+    "INSERT INTO [tblResults] ([ResultID],[ResultName],[ReportLabel]) VALUES (2,'سلبية','سلبية')",
+    "INSERT INTO [tblResults] ([ResultID],[ResultName],[ReportLabel]) VALUES (3,'لم يتبين','تعذر')"
+   ]
+  },
+  {
+   "name": "tblLineTypes",
+   "fields": [
+    {
+     "name": "LineTypeID",
+     "type": 4,
+     "required": true,
+     "caption": "الرقم"
+    },
+    {
+     "name": "LineTypeName",
+     "type": 10,
+     "size": 30,
+     "required": true,
+     "caption": "النوع"
+    }
+   ],
+   "indexes": [
+    {
+     "name": "pkLineTypes",
+     "primary": true,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "LineTypeID"
+     ]
+    }
+   ],
+   "rows": [
+    "INSERT INTO [tblLineTypes] ([LineTypeID],[LineTypeName]) VALUES (1,'عينة')",
+    "INSERT INTO [tblLineTypes] ([LineTypeID],[LineTypeName]) VALUES (2,'انتقال')"
+   ]
+  },
+  {
+   "name": "tblMethods",
+   "fields": [
+    {
+     "name": "MethodCode",
+     "type": 10,
+     "size": 30,
+     "required": true,
+     "caption": "نوع المعالجة"
+    },
+    {
+     "name": "MethodName",
+     "type": 10,
+     "size": 100,
+     "caption": "الوصف"
+    },
+    {
+     "name": "IsDefault",
+     "type": 1,
+     "defaultValue": "False",
+     "caption": "افتراضي"
+    },
+    {
+     "name": "IsActive",
+     "type": 1,
+     "defaultValue": "True",
+     "caption": "فعال"
+    }
+   ],
+   "indexes": [
+    {
+     "name": "pkMethods",
+     "primary": true,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "MethodCode"
+     ]
+    }
+   ],
+   "rows": [
+    "INSERT INTO [tblMethods] ([MethodCode],[MethodName],[IsDefault],[IsActive]) VALUES ('FSD 75-FPD-SM-01','يحدد لاحقاً',False,True)",
+    "INSERT INTO [tblMethods] ([MethodCode],[MethodName],[IsDefault],[IsActive]) VALUES ('FSD 75-FPD-SM-02','يحدد لاحقاً',True,True)",
+    "INSERT INTO [tblMethods] ([MethodCode],[MethodName],[IsDefault],[IsActive]) VALUES ('FSD 75-FPD-SM-03','يحدد لاحقاً',False,True)",
+    "INSERT INTO [tblMethods] ([MethodCode],[MethodName],[IsDefault],[IsActive]) VALUES ('FSD 75-FPD-SM-04','يحدد لاحقاً',False,True)"
+   ]
+  },
+  {
+   "name": "tblDevices",
+   "fields": [
+    {
+     "name": "DeviceID",
+     "type": 4,
+     "autoNumber": true,
+     "caption": "الرقم"
+    },
+    {
+     "name": "DeviceName",
+     "type": 10,
+     "size": 50,
+     "required": true,
+     "caption": "الجهاز"
+    },
+    {
+     "name": "DurationMin",
+     "type": 3,
+     "caption": "مدة الدورة (دقيقة)"
+    },
+    {
+     "name": "IsActive",
+     "type": 1,
+     "defaultValue": "True",
+     "caption": "فعال"
+    }
+   ],
+   "indexes": [
+    {
+     "name": "pkDevices",
+     "primary": true,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "DeviceID"
+     ]
+    },
+    {
+     "name": "uxDeviceName",
+     "primary": false,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "DeviceName"
+     ]
+    }
+   ],
+   "rows": [
+    "INSERT INTO [tblDevices] ([DeviceID],[DeviceName],[DurationMin],[IsActive]) VALUES (1,'MVC1000',50,True)",
+    "INSERT INTO [tblDevices] ([DeviceID],[DeviceName],[DurationMin],[IsActive]) VALUES (2,'MVC5000',85,True)",
+    "INSERT INTO [tblDevices] ([DeviceID],[DeviceName],[DurationMin],[IsActive]) VALUES (3,'MVC5000b',85,True)",
+    "INSERT INTO [tblDevices] ([DeviceID],[DeviceName],[DurationMin],[IsActive]) VALUES (4,'MVClite',35,True)",
+    "INSERT INTO [tblDevices] ([DeviceID],[DeviceName],[DurationMin],[IsActive]) VALUES (5,'CARON1',7,True)",
+    "INSERT INTO [tblDevices] ([DeviceID],[DeviceName],[DurationMin],[IsActive]) VALUES (6,'CARON2',15,True)",
+    "INSERT INTO [tblDevices] ([DeviceID],[DeviceName],[DurationMin],[IsActive]) VALUES (7,'VMD',10,True)",
+    "INSERT INTO [tblDevices] ([DeviceID],[DeviceName],[DurationMin],[IsActive]) VALUES (8,'EVISCAN',20,True)"
+   ]
+  },
+  {
+   "name": "tblTransferTargets",
+   "fields": [
+    {
+     "name": "TargetID",
+     "type": 4,
+     "autoNumber": true,
+     "caption": "الرقم"
+    },
+    {
+     "name": "TargetName",
+     "type": 10,
+     "size": 100,
+     "required": true,
+     "caption": "جهة التحويل"
+    },
+    {
+     "name": "IsDefault",
+     "type": 1,
+     "defaultValue": "False",
+     "caption": "افتراضي"
+    },
+    {
+     "name": "IsActive",
+     "type": 1,
+     "defaultValue": "True",
+     "caption": "فعال"
+    }
+   ],
+   "indexes": [
+    {
+     "name": "pkTransferTargets",
+     "primary": true,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "TargetID"
+     ]
+    },
+    {
+     "name": "uxTargetName",
+     "primary": false,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "TargetName"
+     ]
+    }
+   ],
+   "rows": [
+    "INSERT INTO [tblTransferTargets] ([TargetID],[TargetName],[IsDefault],[IsActive]) VALUES (1,'الشؤون الفنية',True,True)",
+    "INSERT INTO [tblTransferTargets] ([TargetID],[TargetName],[IsDefault],[IsActive]) VALUES (2,'قسم مقارنة البصمات',False,True)"
+   ]
+  },
+  {
+   "name": "tblTraceStatus",
+   "fields": [
+    {
+     "name": "StatusID",
+     "type": 4,
+     "required": true,
+     "caption": "الرقم"
+    },
+    {
+     "name": "StatusName",
+     "type": 10,
+     "size": 50,
+     "required": true,
+     "caption": "الحالة"
+    }
+   ],
+   "indexes": [
+    {
+     "name": "pkTraceStatus",
+     "primary": true,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "StatusID"
+     ]
+    }
+   ],
+   "rows": [
+    "INSERT INTO [tblTraceStatus] ([StatusID],[StatusName]) VALUES (1,'تم الإظهار')",
+    "INSERT INTO [tblTraceStatus] ([StatusID],[StatusName]) VALUES (2,'تم التصوير والتوثيق')",
+    "INSERT INTO [tblTraceStatus] ([StatusID],[StatusName]) VALUES (3,'مسجل في منصة أثر')"
+   ]
+  },
+  {
+   "name": "tblCases",
+   "fields": [
+    {
+     "name": "CaseID",
+     "type": 4,
+     "autoNumber": true,
+     "caption": "الرقم الداخلي"
+    },
+    {
+     "name": "RefNo",
+     "type": 10,
+     "size": 20,
+     "required": true,
+     "caption": "رقم المرجع",
+     "validationRule": "Not Like \"*[!0-9]*\"",
+     "validationText": "رقم المرجع أرقام فقط."
+    },
+    {
+     "name": "ForensicNo",
+     "type": 10,
+     "size": 30,
+     "caption": "رقم الأدلة الجنائية"
+    },
+    {
+     "name": "AgencyID",
+     "type": 4,
+     "caption": "الجهة"
+    },
+    {
+     "name": "IncidentTypeID",
+     "type": 4,
+     "caption": "نوع الحادث"
+    },
+    {
+     "name": "CaseDate",
+     "type": 8,
+     "required": true,
+     "defaultValue": "=Date()",
+     "caption": "تاريخ القضية"
+    },
+    {
+     "name": "Notes",
+     "type": 10,
+     "size": 255,
+     "caption": "ملاحظات"
+    },
+    {
+     "name": "CreatedBy",
+     "type": 10,
+     "size": 50,
+     "caption": "أضيف بواسطة"
+    },
+    {
+     "name": "CreatedAt",
+     "type": 8,
+     "defaultValue": "=Now()",
+     "caption": "تاريخ الإضافة"
+    }
+   ],
+   "indexes": [
+    {
+     "name": "pkCases",
+     "primary": true,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "CaseID"
+     ]
+    },
+    {
+     "name": "uxCaseRef",
+     "primary": false,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "RefNo"
+     ]
+    }
+   ],
+   "validationRule": "[ForensicNo] Is Null Or [ForensicNo] Not Like \"*[!0-9]*\"",
+   "validationText": "رقم الأدلة الجنائية: الرقم فقط، مثل 312312 (السنة و«ظ» تُضاف في التقرير).",
+   "rows": []
+  },
+  {
+   "name": "tblBatches",
+   "fields": [
+    {
+     "name": "BatchID",
+     "type": 4,
+     "autoNumber": true,
+     "caption": "الرقم الداخلي"
+    },
+    {
+     "name": "CaseID",
+     "type": 4,
+     "required": true,
+     "caption": "القضية"
+    },
+    {
+     "name": "BatchNo",
+     "type": 3,
+     "required": true,
+     "caption": "رقم المجموعة"
+    },
+    {
+     "name": "ReceivedDate",
+     "type": 8,
+     "required": true,
+     "defaultValue": "=Date()",
+     "caption": "تاريخ الورود"
+    },
+    {
+     "name": "ExamDate",
+     "type": 8,
+     "caption": "تاريخ الفحص"
+    },
+    {
+     "name": "ExportDate",
+     "type": 8,
+     "caption": "تاريخ التصدير"
+    },
+    {
+     "name": "ExaminerID",
+     "type": 4,
+     "required": true,
+     "caption": "القائم بالفحص"
+    },
+    {
+     "name": "ReviewerID",
+     "type": 4,
+     "caption": "القائم بالمراجعة"
+    },
+    {
+     "name": "ApproverID",
+     "type": 4,
+     "caption": "المعتمد"
+    },
+    {
+     "name": "Notes",
+     "type": 10,
+     "size": 255,
+     "caption": "ملاحظات"
+    },
+    {
+     "name": "CreatedBy",
+     "type": 10,
+     "size": 50,
+     "caption": "أضيف بواسطة"
+    },
+    {
+     "name": "CreatedAt",
+     "type": 8,
+     "defaultValue": "=Now()",
+     "caption": "تاريخ الإضافة"
+    }
+   ],
+   "indexes": [
+    {
+     "name": "ixBatchExaminer",
+     "primary": false,
+     "unique": false,
+     "ignoreNulls": false,
+     "fields": [
+      "ExaminerID"
+     ]
+    },
+    {
+     "name": "ixBatchReceived",
+     "primary": false,
+     "unique": false,
+     "ignoreNulls": false,
+     "fields": [
+      "ReceivedDate"
+     ]
+    },
+    {
+     "name": "pkBatches",
+     "primary": true,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "BatchID"
+     ]
+    },
+    {
+     "name": "uxBatchNo",
+     "primary": false,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "CaseID",
+      "BatchNo"
+     ]
+    }
+   ],
+   "validationRule": "([ExamDate] Is Null Or [ExamDate]>=[ReceivedDate]) And ([ExportDate] Is Null Or [ExamDate] Is Null Or [ExportDate]>=[ExamDate])",
+   "validationText": "تاريخ الفحص لا يسبق تاريخ الورود، وتاريخ التصدير لا يسبق تاريخ الفحص.",
+   "rows": []
+  },
+  {
+   "name": "tblSamples",
+   "fields": [
+    {
+     "name": "SampleID",
+     "type": 4,
+     "autoNumber": true,
+     "caption": "الرقم الداخلي"
+    },
+    {
+     "name": "BatchID",
+     "type": 4,
+     "required": true,
+     "caption": "المجموعة"
+    },
+    {
+     "name": "SampleNo",
+     "type": 3,
+     "required": true,
+     "caption": "م"
+    },
+    {
+     "name": "LineType",
+     "type": 4,
+     "required": true,
+     "defaultValue": "1",
+     "caption": "النوع"
+    },
+    {
+     "name": "Barcode",
+     "type": 10,
+     "size": 20,
+     "caption": "باركود العينة"
+    },
+    {
+     "name": "Description",
+     "type": 10,
+     "size": 255,
+     "caption": "وصف العينة"
+    },
+    {
+     "name": "ItemCount",
+     "type": 3,
+     "defaultValue": "1",
+     "caption": "العدد"
+    },
+    {
+     "name": "LiftLocation",
+     "type": 10,
+     "size": 255,
+     "caption": "مكان الرفع"
+    },
+    {
+     "name": "VisitDateTime",
+     "type": 8,
+     "caption": "تاريخ ووقت الانتقال"
+    },
+    {
+     "name": "MethodCode",
+     "type": 10,
+     "size": 30,
+     "caption": "نوع المعالجة"
+    },
+    {
+     "name": "PosCount",
+     "type": 3,
+     "caption": "إيجابية"
+    },
+    {
+     "name": "NegCount",
+     "type": 3,
+     "caption": "سلبية"
+    },
+    {
+     "name": "UnkCount",
+     "type": 3,
+     "caption": "لم يتبين"
+    },
+    {
+     "name": "TraceCount",
+     "type": 3,
+     "caption": "عدد الآثار"
+    },
+    {
+     "name": "PhotoPath",
+     "type": 10,
+     "size": 255,
+     "caption": "صورة العينة"
+    },
+    {
+     "name": "TransferTargetID",
+     "type": 4,
+     "caption": "جهة التحويل"
+    },
+    {
+     "name": "StoredDate",
+     "type": 8,
+     "caption": "تاريخ الحفظ في الخزانة"
+    },
+    {
+     "name": "RetrievedDate",
+     "type": 8,
+     "caption": "تاريخ الاسترجاع من الخزانة"
+    },
+    {
+     "name": "TransferredDate",
+     "type": 8,
+     "caption": "تاريخ التحويل"
+    },
+    {
+     "name": "Notes",
+     "type": 10,
+     "size": 255,
+     "caption": "ملاحظات"
+    },
+    {
+     "name": "CreatedBy",
+     "type": 10,
+     "size": 50,
+     "caption": "أضيف بواسطة"
+    },
+    {
+     "name": "CreatedAt",
+     "type": 8,
+     "defaultValue": "=Now()",
+     "caption": "تاريخ الإضافة"
+    }
+   ],
+   "indexes": [
+    {
+     "name": "pkSamples",
+     "primary": true,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "SampleID"
+     ]
+    },
+    {
+     "name": "uxSampleBarcode",
+     "primary": false,
+     "unique": true,
+     "ignoreNulls": true,
+     "fields": [
+      "Barcode"
+     ]
+    },
+    {
+     "name": "uxSampleNo",
+     "primary": false,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "BatchID",
+      "SampleNo"
+     ]
+    }
+   ],
+   "validationRule": "([LineType] In (1,2)) And (([LineType]=1 And [Barcode] Is Not Null And [Description] Is Not Null And [ItemCount] Is Not Null And [LiftLocation] Is Not Null And [MethodCode] Is Not Null And [PosCount] Is Not Null And [NegCount] Is Not Null And [UnkCount] Is Not Null And [ItemCount]>=1 And [PosCount]>=0 And [NegCount]>=0 And [UnkCount]>=0 And [PosCount]+[NegCount]+[UnkCount]=[ItemCount] And (([PosCount]>0 And [TraceCount] Is Not Null And [TraceCount]>0) Or ([PosCount]=0 And ([TraceCount] Is Null Or [TraceCount]=0)))) Or ([LineType]=2 And [Barcode] Is Null And [MethodCode] Is Null And [PosCount] Is Null And [NegCount] Is Null And [UnkCount] Is Null And [TraceCount] Is Not Null And [TraceCount]>=0))",
+   "validationText": "العينة: الباركود والوصف والعدد ومكان الرفع ونوع المعالجة والإيجابي والسلبي ولم يتبين إجبارية، ومجموع الإيجابي والسلبي ولم يتبين يساوي العدد. الإيجابي يحتاج عدد الآثار (أكبر من صفر). الانتقال: لا يُكتب فيه إلا عدد الآثار المرفوعة (صفر أو أكثر).",
+   "rows": []
+  },
+  {
+   "name": "tblBatchStaff",
+   "fields": [
+    {
+     "name": "BatchID",
+     "type": 4,
+     "required": true,
+     "caption": "المجموعة"
+    },
+    {
+     "name": "UserID",
+     "type": 4,
+     "required": true,
+     "caption": "الموظف"
+    },
+    {
+     "name": "PosCount",
+     "type": 3,
+     "required": true,
+     "defaultValue": "0",
+     "caption": "إيجابية"
+    },
+    {
+     "name": "NegCount",
+     "type": 3,
+     "required": true,
+     "defaultValue": "0",
+     "caption": "سلبية"
+    },
+    {
+     "name": "UnkCount",
+     "type": 3,
+     "required": true,
+     "defaultValue": "0",
+     "caption": "لم يتبين"
+    },
+    {
+     "name": "ProcTraces",
+     "type": 3,
+     "required": true,
+     "defaultValue": "0",
+     "caption": "آثار المعالجة"
+    },
+    {
+     "name": "VisitTraces",
+     "type": 3,
+     "required": true,
+     "defaultValue": "0",
+     "caption": "آثار الانتقال"
+    }
+   ],
+   "indexes": [
+    {
+     "name": "pkBatchStaff",
+     "primary": true,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "BatchID",
+      "UserID"
+     ]
+    }
+   ],
+   "validationRule": "[PosCount]>=0 And [NegCount]>=0 And [UnkCount]>=0 And [ProcTraces]>=0 And [VisitTraces]>=0",
+   "validationText": "الأعداد صفر أو أكثر.",
+   "rows": []
+  },
+  {
+   "name": "tblTraces",
+   "fields": [
+    {
+     "name": "TraceID",
+     "type": 4,
+     "autoNumber": true,
+     "caption": "الرقم الداخلي"
+    },
+    {
+     "name": "SampleID",
+     "type": 4,
+     "required": true,
+     "caption": "العينة"
+    },
+    {
+     "name": "TraceNo",
+     "type": 3,
+     "required": true,
+     "caption": "رقم الأثر"
+    },
+    {
+     "name": "TraceCode",
+     "type": 10,
+     "size": 40,
+     "required": true,
+     "caption": "رمز الأثر"
+    },
+    {
+     "name": "AtharBarcode",
+     "type": 10,
+     "size": 30,
+     "caption": "باركود منصة أثر"
+    },
+    {
+     "name": "LiftLocation",
+     "type": 10,
+     "size": 255,
+     "caption": "مكان رفع الأثر"
+    },
+    {
+     "name": "Description",
+     "type": 10,
+     "size": 255,
+     "caption": "وصف الأثر"
+    },
+    {
+     "name": "PhotoPath",
+     "type": 10,
+     "size": 255,
+     "caption": "صورة الأثر"
+    },
+    {
+     "name": "StatusID",
+     "type": 4,
+     "required": true,
+     "defaultValue": "1",
+     "caption": "الحالة"
+    },
+    {
+     "name": "AtharRegDate",
+     "type": 8,
+     "caption": "تاريخ التسجيل في أثر"
+    },
+    {
+     "name": "Notes",
+     "type": 10,
+     "size": 255,
+     "caption": "ملاحظات"
+    },
+    {
+     "name": "CreatedAt",
+     "type": 8,
+     "defaultValue": "=Now()",
+     "caption": "تاريخ الإضافة"
+    }
+   ],
+   "indexes": [
+    {
+     "name": "pkTraces",
+     "primary": true,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "TraceID"
+     ]
+    },
+    {
+     "name": "uxTraceAthar",
+     "primary": false,
+     "unique": true,
+     "ignoreNulls": true,
+     "fields": [
+      "AtharBarcode"
+     ]
+    },
+    {
+     "name": "uxTraceCode",
+     "primary": false,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "TraceCode"
+     ]
+    },
+    {
+     "name": "uxTraceNo",
+     "primary": false,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "SampleID",
+      "TraceNo"
+     ]
+    }
+   ],
+   "validationRule": "[StatusID]<3 Or [AtharBarcode] Is Not Null",
+   "validationText": "الأثر المسجل في منصة أثر يحتاج باركود الأثر.",
+   "rows": []
+  },
+  {
+   "name": "tblRuns",
+   "fields": [
+    {
+     "name": "RunID",
+     "type": 4,
+     "autoNumber": true,
+     "caption": "رقم التشغيلة"
+    },
+    {
+     "name": "DeviceID",
+     "type": 4,
+     "required": true,
+     "caption": "الجهاز"
+    },
+    {
+     "name": "RunDate",
+     "type": 8,
+     "required": true,
+     "defaultValue": "=Date()",
+     "caption": "تاريخ المعالجة"
+    },
+    {
+     "name": "StartTime",
+     "type": 8,
+     "caption": "وقت البدء"
+    },
+    {
+     "name": "EndTime",
+     "type": 8,
+     "caption": "وقت الانتهاء"
+    },
+    {
+     "name": "UserID",
+     "type": 4,
+     "caption": "الموظف"
+    },
+    {
+     "name": "Notes",
+     "type": 10,
+     "size": 255,
+     "caption": "ملاحظات"
+    },
+    {
+     "name": "CreatedAt",
+     "type": 8,
+     "defaultValue": "=Now()",
+     "caption": "تاريخ الإضافة"
+    }
+   ],
+   "indexes": [
+    {
+     "name": "pkRuns",
+     "primary": true,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "RunID"
+     ]
+    }
+   ],
+   "validationRule": "[EndTime] Is Null Or [StartTime] Is Null Or [EndTime]>=[StartTime]",
+   "validationText": "وقت الانتهاء لا يسبق وقت البدء.",
+   "rows": []
+  },
+  {
+   "name": "tblRunSamples",
+   "fields": [
+    {
+     "name": "RunID",
+     "type": 4,
+     "required": true,
+     "caption": "التشغيلة"
+    },
+    {
+     "name": "SampleID",
+     "type": 4,
+     "required": true,
+     "caption": "العينة"
+    }
+   ],
+   "indexes": [
+    {
+     "name": "pkRunSamples",
+     "primary": true,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "RunID",
+      "SampleID"
+     ]
+    }
+   ],
+   "rows": []
+  },
+  {
+   "name": "tblStorageLocations",
+   "fields": [
+    {
+     "name": "LocationID",
+     "type": 4,
+     "autoNumber": true,
+     "caption": "الرقم"
+    },
+    {
+     "name": "LocationName",
+     "type": 10,
+     "size": 100,
+     "required": true,
+     "caption": "موقع التخزين"
+    },
+    {
+     "name": "IsActive",
+     "type": 1,
+     "defaultValue": "True",
+     "caption": "فعال"
+    }
+   ],
+   "indexes": [
+    {
+     "name": "pkLocations",
+     "primary": true,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "LocationID"
+     ]
+    },
+    {
+     "name": "uxLocationName",
+     "primary": false,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "LocationName"
+     ]
+    }
+   ],
+   "rows": [
+    "INSERT INTO [tblStorageLocations] ([LocationID],[LocationName],[IsActive]) VALUES (1,'التصوير 1',True)",
+    "INSERT INTO [tblStorageLocations] ([LocationID],[LocationName],[IsActive]) VALUES (2,'مختبر سوبر جلو',True)",
+    "INSERT INTO [tblStorageLocations] ([LocationID],[LocationName],[IsActive]) VALUES (3,'مختبر فض الاحراز',True)",
+    "INSERT INTO [tblStorageLocations] ([LocationID],[LocationName],[IsActive]) VALUES (4,'مختبر ناين هيدرين',True)",
+    "INSERT INTO [tblStorageLocations] ([LocationID],[LocationName],[IsActive]) VALUES (5,'مستودع الرئيسي للاظهار',True)"
+   ]
+  },
+  {
+   "name": "tblMaterials",
+   "fields": [
+    {
+     "name": "MaterialID",
+     "type": 4,
+     "autoNumber": true,
+     "caption": "الرقم"
+    },
+    {
+     "name": "MaterialName",
+     "type": 10,
+     "size": 100,
+     "required": true,
+     "caption": "المادة"
+    },
+    {
+     "name": "Unit",
+     "type": 10,
+     "size": 30,
+     "caption": "الوحدة"
+    },
+    {
+     "name": "MinStock",
+     "type": 7,
+     "caption": "الحد الأدنى"
+    },
+    {
+     "name": "IsActive",
+     "type": 1,
+     "defaultValue": "True",
+     "caption": "فعال"
+    }
+   ],
+   "indexes": [
+    {
+     "name": "pkMaterials",
+     "primary": true,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "MaterialID"
+     ]
+    },
+    {
+     "name": "uxMaterialName",
+     "primary": false,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "MaterialName"
+     ]
+    }
+   ],
+   "rows": [
+    "INSERT INTO [tblMaterials] ([MaterialID],[MaterialName],[Unit],[MinStock],[IsActive]) VALUES (1,'ناين هيدرين',Null,Null,True)",
+    "INSERT INTO [tblMaterials] ([MaterialID],[MaterialName],[Unit],[MinStock],[IsActive]) VALUES (2,'اميدوبلاك',Null,Null,True)",
+    "INSERT INTO [tblMaterials] ([MaterialID],[MaterialName],[Unit],[MinStock],[IsActive]) VALUES (3,'بودره عادية',Null,Null,True)",
+    "INSERT INTO [tblMaterials] ([MaterialID],[MaterialName],[Unit],[MinStock],[IsActive]) VALUES (4,'بودرة ممغنطة',Null,Null,True)",
+    "INSERT INTO [tblMaterials] ([MaterialID],[MaterialName],[Unit],[MinStock],[IsActive]) VALUES (5,'استيكي سايت اسود',Null,Null,True)",
+    "INSERT INTO [tblMaterials] ([MaterialID],[MaterialName],[Unit],[MinStock],[IsActive]) VALUES (6,'استيكي سايت ابيض',Null,Null,True)",
+    "INSERT INTO [tblMaterials] ([MaterialID],[MaterialName],[Unit],[MinStock],[IsActive]) VALUES (7,'ميثانول',Null,Null,True)",
+    "INSERT INTO [tblMaterials] ([MaterialID],[MaterialName],[Unit],[MinStock],[IsActive]) VALUES (8,'اسيتون',Null,Null,True)",
+    "INSERT INTO [tblMaterials] ([MaterialID],[MaterialName],[Unit],[MinStock],[IsActive]) VALUES (9,'ناين هيدرين i609',Null,Null,True)",
+    "INSERT INTO [tblMaterials] ([MaterialID],[MaterialName],[Unit],[MinStock],[IsActive]) VALUES (10,'ناين هيدرين t609',Null,Null,True)"
+   ]
+  },
+  {
+   "name": "tblStockMoves",
+   "fields": [
+    {
+     "name": "MoveID",
+     "type": 4,
+     "autoNumber": true,
+     "caption": "الرقم"
+    },
+    {
+     "name": "MaterialID",
+     "type": 4,
+     "required": true,
+     "caption": "المادة"
+    },
+    {
+     "name": "MoveType",
+     "type": 4,
+     "required": true,
+     "caption": "الحركة"
+    },
+    {
+     "name": "Qty",
+     "type": 7,
+     "required": true,
+     "caption": "الكمية"
+    },
+    {
+     "name": "MoveDate",
+     "type": 8,
+     "required": true,
+     "defaultValue": "=Date()",
+     "caption": "التاريخ"
+    },
+    {
+     "name": "ExpiryDate",
+     "type": 8,
+     "caption": "تاريخ الانتهاء"
+    },
+    {
+     "name": "LotNo",
+     "type": 10,
+     "size": 50,
+     "caption": "رقم الدفعة"
+    },
+    {
+     "name": "LocationID",
+     "type": 4,
+     "caption": "الموقع"
+    },
+    {
+     "name": "UserID",
+     "type": 4,
+     "caption": "الموظف"
+    },
+    {
+     "name": "Notes",
+     "type": 10,
+     "size": 255,
+     "caption": "ملاحظات"
+    }
+   ],
+   "indexes": [
+    {
+     "name": "pkStockMoves",
+     "primary": true,
+     "unique": true,
+     "ignoreNulls": false,
+     "fields": [
+      "MoveID"
+     ]
+    }
+   ],
+   "validationRule": "[MoveType] In (1,2) And [Qty]>0",
+   "validationText": "نوع الحركة إضافة (1) أو صرف (2)، والكمية أكبر من صفر.",
+   "rows": []
+  }
+ ],
+ "relations": [
+  {
+   "name": "fkCaseAgency",
+   "table": "tblAgencies",
+   "foreignTable": "tblCases",
+   "attributes": 0,
+   "fields": [
+    [
+     "AgencyID",
+     "AgencyID"
+    ]
+   ]
+  },
+  {
+   "name": "fkCaseIncident",
+   "table": "tblIncidentTypes",
+   "foreignTable": "tblCases",
+   "attributes": 0,
+   "fields": [
+    [
+     "IncidentTypeID",
+     "IncidentTypeID"
+    ]
+   ]
+  },
+  {
+   "name": "fkBatchCase",
+   "table": "tblCases",
+   "foreignTable": "tblBatches",
+   "attributes": 0,
+   "fields": [
+    [
+     "CaseID",
+     "CaseID"
+    ]
+   ]
+  },
+  {
+   "name": "fkBatchExaminer",
+   "table": "tblUsers",
+   "foreignTable": "tblBatches",
+   "attributes": 0,
+   "fields": [
+    [
+     "UserID",
+     "ExaminerID"
+    ]
+   ]
+  },
+  {
+   "name": "fkBatchReviewer",
+   "table": "tblUsers",
+   "foreignTable": "tblBatches",
+   "attributes": 0,
+   "fields": [
+    [
+     "UserID",
+     "ReviewerID"
+    ]
+   ]
+  },
+  {
+   "name": "fkBatchApprover",
+   "table": "tblUsers",
+   "foreignTable": "tblBatches",
+   "attributes": 0,
+   "fields": [
+    [
+     "UserID",
+     "ApproverID"
+    ]
+   ]
+  },
+  {
+   "name": "fkSampleBatch",
+   "table": "tblBatches",
+   "foreignTable": "tblSamples",
+   "attributes": 0,
+   "fields": [
+    [
+     "BatchID",
+     "BatchID"
+    ]
+   ]
+  },
+  {
+   "name": "fkSampleLineType",
+   "table": "tblLineTypes",
+   "foreignTable": "tblSamples",
+   "attributes": 0,
+   "fields": [
+    [
+     "LineTypeID",
+     "LineType"
+    ]
+   ]
+  },
+  {
+   "name": "fkSampleMethod",
+   "table": "tblMethods",
+   "foreignTable": "tblSamples",
+   "attributes": 256,
+   "fields": [
+    [
+     "MethodCode",
+     "MethodCode"
+    ]
+   ]
+  },
+  {
+   "name": "fkSampleTarget",
+   "table": "tblTransferTargets",
+   "foreignTable": "tblSamples",
+   "attributes": 0,
+   "fields": [
+    [
+     "TargetID",
+     "TransferTargetID"
+    ]
+   ]
+  },
+  {
+   "name": "fkStaffBatch",
+   "table": "tblBatches",
+   "foreignTable": "tblBatchStaff",
+   "attributes": 4096,
+   "fields": [
+    [
+     "BatchID",
+     "BatchID"
+    ]
+   ]
+  },
+  {
+   "name": "fkStaffUser",
+   "table": "tblUsers",
+   "foreignTable": "tblBatchStaff",
+   "attributes": 0,
+   "fields": [
+    [
+     "UserID",
+     "UserID"
+    ]
+   ]
+  },
+  {
+   "name": "fkTraceSample",
+   "table": "tblSamples",
+   "foreignTable": "tblTraces",
+   "attributes": 0,
+   "fields": [
+    [
+     "SampleID",
+     "SampleID"
+    ]
+   ]
+  },
+  {
+   "name": "fkTraceStatus",
+   "table": "tblTraceStatus",
+   "foreignTable": "tblTraces",
+   "attributes": 0,
+   "fields": [
+    [
+     "StatusID",
+     "StatusID"
+    ]
+   ]
+  },
+  {
+   "name": "fkRunDevice",
+   "table": "tblDevices",
+   "foreignTable": "tblRuns",
+   "attributes": 0,
+   "fields": [
+    [
+     "DeviceID",
+     "DeviceID"
+    ]
+   ]
+  },
+  {
+   "name": "fkRunUser",
+   "table": "tblUsers",
+   "foreignTable": "tblRuns",
+   "attributes": 0,
+   "fields": [
+    [
+     "UserID",
+     "UserID"
+    ]
+   ]
+  },
+  {
+   "name": "fkRunSampleRun",
+   "table": "tblRuns",
+   "foreignTable": "tblRunSamples",
+   "attributes": 4096,
+   "fields": [
+    [
+     "RunID",
+     "RunID"
+    ]
+   ]
+  },
+  {
+   "name": "fkRunSampleSample",
+   "table": "tblSamples",
+   "foreignTable": "tblRunSamples",
+   "attributes": 0,
+   "fields": [
+    [
+     "SampleID",
+     "SampleID"
+    ]
+   ]
+  },
+  {
+   "name": "fkMoveMaterial",
+   "table": "tblMaterials",
+   "foreignTable": "tblStockMoves",
+   "attributes": 0,
+   "fields": [
+    [
+     "MaterialID",
+     "MaterialID"
+    ]
+   ]
+  },
+  {
+   "name": "fkMoveLocation",
+   "table": "tblStorageLocations",
+   "foreignTable": "tblStockMoves",
+   "attributes": 0,
+   "fields": [
+    [
+     "LocationID",
+     "LocationID"
+    ]
+   ]
+  },
+  {
+   "name": "fkMoveUser",
+   "table": "tblUsers",
+   "foreignTable": "tblStockMoves",
+   "attributes": 0,
+   "fields": [
+    [
+     "UserID",
+     "UserID"
+    ]
+   ]
+  }
+ ],
+ "queries": [
+  {
+   "name": "qTracesEdit",
+   "sql": "SELECT t.TraceID, t.SampleID, t.TraceNo, t.TraceCode, t.AtharBarcode, t.LiftLocation, t.Description, t.PhotoPath, t.StatusID, t.AtharRegDate, s.BatchID, b.CaseID, b.BatchNo, s.SampleNo, s.LineType, s.Description AS SampleDesc\r\nFROM (tblTraces AS t INNER JOIN tblSamples AS s ON t.SampleID = s.SampleID) INNER JOIN tblBatches AS b ON s.BatchID = b.BatchID\r\nORDER BY b.BatchNo, s.SampleNo, t.TraceNo;"
+  },
+  {
+   "name": "qRunSamples",
+   "sql": "SELECT rs.RunID, rs.SampleID, s.Barcode, s.Description, s.ItemCount, c.RefNo\r\nFROM ((tblRunSamples AS rs INNER JOIN tblSamples AS s ON rs.SampleID = s.SampleID) INNER JOIN tblBatches AS b ON s.BatchID = b.BatchID) INNER JOIN tblCases AS c ON b.CaseID = c.CaseID\r\nORDER BY s.Barcode;"
+  },
+  {
+   "name": "qRunWork",
+   "sql": "SELECT rs.RunID, rs.SampleID, r.UserID, r.RunDate, s.BatchID, IIf(s.PosCount Is Null,0,s.PosCount) AS PosItems, IIf(s.NegCount Is Null,0,s.NegCount) AS NegItems, IIf(s.PosCount Is Null,0,s.PosCount)+IIf(s.NegCount Is Null,0,s.NegCount) AS TestItems\r\nFROM (tblRunSamples AS rs INNER JOIN tblRuns AS r ON rs.RunID = r.RunID) INNER JOIN tblSamples AS s ON rs.SampleID = s.SampleID;"
+  },
+  {
+   "name": "qRunWorkSum",
+   "sql": "SELECT BatchID, UserID, Sum(TestItems) AS Tests, Sum(PosItems) AS PosTests, Sum(NegItems) AS NegTests\r\nFROM qRunWork\r\nGROUP BY BatchID, UserID;"
+  },
+  {
+   "name": "qBatchFacts",
+   "sql": "SELECT b.BatchID, b.CaseID, b.BatchNo, b.ReceivedDate, b.ReviewerID, Sum(IIf(s.LineType=2,1,0)) AS VisitLines\r\nFROM tblBatches AS b LEFT JOIN tblSamples AS s ON b.BatchID = s.BatchID\r\nGROUP BY b.BatchID, b.CaseID, b.BatchNo, b.ReceivedDate, b.ReviewerID;"
+  },
+  {
+   "name": "qStaffCount",
+   "sql": "SELECT BatchID, Count(*) AS StaffCount\r\nFROM tblBatchStaff\r\nGROUP BY BatchID;"
+  },
+  {
+   "name": "qStatBase",
+   "sql": "SELECT st.UserID, u.FullName, f.BatchID, f.CaseID, c.RefNo, a.AgencyName, f.BatchNo, f.ReceivedDate, Year(f.ReceivedDate) AS Yr, Month(f.ReceivedDate) AS Mo, DatePart(\"q\",f.ReceivedDate) AS Qt, st.PosCount+st.NegCount+st.UnkCount AS Samples, st.PosCount, st.NegCount, st.UnkCount, st.ProcTraces, st.VisitTraces, IIf(st.PosCount+st.NegCount+st.UnkCount>0,1,0) AS ProcCases, IIf(f.VisitLines>0 And (st.VisitTraces>0 Or sc.StaffCount=1),1,0) AS VisitCases, IIf(sc.StaffCount>1,1,0) AS SharedFlag, IIf(w.Tests Is Null,0,w.Tests) AS Tests, IIf(w.PosTests Is Null,0,w.PosTests) AS PosTests, IIf(w.NegTests Is Null,0,w.NegTests) AS NegTests\r\nFROM (((((tblBatchStaff AS st INNER JOIN qBatchFacts AS f ON st.BatchID = f.BatchID) INNER JOIN tblCases AS c ON f.CaseID = c.CaseID) INNER JOIN tblUsers AS u ON st.UserID = u.UserID) INNER JOIN qStaffCount AS sc ON st.BatchID = sc.BatchID) LEFT JOIN tblAgencies AS a ON c.AgencyID = a.AgencyID) LEFT JOIN qRunWorkSum AS w ON st.BatchID = w.BatchID AND st.UserID = w.UserID;"
+  },
+  {
+   "name": "الاحصائية الشهرية",
+   "sql": "SELECT FullName & '' AS [القائم بالفحص], Sum(VisitCases) AS [عدد قضايا الانتقال], Sum(VisitTraces) AS [عدد آثار الانتقال], Sum(ProcCases) AS [عدد قضايا المعالجة], Sum(Samples) AS [عدد العينات], Sum(PosCount) AS [الإيجابي], Sum(NegCount) AS [السلبي], Sum(UnkCount) AS [لم يتبين], Sum(ProcTraces) AS [عدد الآثار], Count(*) AS [المنجز من القضايا], Sum(Tests) AS [عدد الفحوص], Sum(PosTests) AS [الفحص الإيجابي], Sum(NegTests) AS [الفحص السلبي]\r\nFROM qStatBase\r\nWHERE [Yr]=[TempVars]![StatYear] AND [Mo]=[TempVars]![StatFrom]\r\nGROUP BY FullName\r\nORDER BY FullName;"
+  },
+  {
+   "name": "احصائية الموظف",
+   "sql": "SELECT FullName & '' AS [القائم بالفحص], Sum(VisitCases) AS [عدد قضايا الانتقال], Sum(VisitTraces) AS [عدد آثار الانتقال], Sum(ProcCases) AS [عدد قضايا المعالجة], Sum(Samples) AS [عدد العينات], Sum(PosCount) AS [الإيجابي], Sum(NegCount) AS [السلبي], Sum(UnkCount) AS [لم يتبين], Sum(ProcTraces) AS [عدد الآثار], Count(*) AS [المنجز من القضايا], Sum(Tests) AS [عدد الفحوص], Sum(PosTests) AS [الفحص الإيجابي], Sum(NegTests) AS [الفحص السلبي]\r\nFROM qStatBase\r\nWHERE [Yr]=[TempVars]![StatYear] AND [Mo] Between [TempVars]![StatFrom] And [TempVars]![StatTo]\r\nGROUP BY FullName\r\nORDER BY FullName;"
+  },
+  {
+   "name": "احصائية الربع",
+   "sql": "SELECT FullName & '' AS [القائم بالفحص], Qt AS [الربع], Sum(VisitCases) AS [عدد قضايا الانتقال], Sum(VisitTraces) AS [عدد آثار الانتقال], Sum(ProcCases) AS [عدد قضايا المعالجة], Sum(Samples) AS [عدد العينات], Sum(PosCount) AS [الإيجابي], Sum(NegCount) AS [السلبي], Sum(UnkCount) AS [لم يتبين], Sum(ProcTraces) AS [عدد الآثار], Count(*) AS [المنجز من القضايا], Sum(Tests) AS [عدد الفحوص], Sum(PosTests) AS [الفحص الإيجابي], Sum(NegTests) AS [الفحص السلبي]\r\nFROM qStatBase\r\nWHERE [Yr]=[TempVars]![StatYear]\r\nGROUP BY FullName, Qt\r\nORDER BY FullName, Qt;"
+  },
+  {
+   "name": "qReviewsYear",
+   "sql": "SELECT ReviewerID, Count(*) AS Reviews\r\nFROM tblBatches\r\nWHERE ReviewerID Is Not Null AND Year(ReceivedDate)=[TempVars]![StatYear]\r\nGROUP BY ReviewerID;"
+  },
+  {
+   "name": "qStatYearSums",
+   "sql": "SELECT UserID, FullName & '' AS [القائم بالفحص], Sum(VisitCases) AS [عدد قضايا الانتقال], Sum(VisitTraces) AS [عدد آثار الانتقال], Sum(ProcCases) AS [عدد قضايا المعالجة], Sum(Samples) AS [عدد العينات], Sum(PosCount) AS [الإيجابي], Sum(NegCount) AS [السلبي], Sum(UnkCount) AS [لم يتبين], Sum(ProcTraces) AS [عدد الآثار], Count(*) AS [المنجز من القضايا], Sum(Tests) AS [عدد الفحوص], Sum(PosTests) AS [الفحص الإيجابي], Sum(NegTests) AS [الفحص السلبي]\r\nFROM qStatBase\r\nWHERE [Yr]=[TempVars]![StatYear]\r\nGROUP BY UserID, FullName;"
+  },
+  {
+   "name": "الاحصائية السنوية",
+   "sql": "SELECT y.*, IIf(r.Reviews Is Null,0,r.Reviews) AS [مراجعة]\r\nFROM qStatYearSums AS y LEFT JOIN qReviewsYear AS r ON y.UserID = r.ReviewerID\r\nORDER BY y.[القائم بالفحص];"
+  },
+  {
+   "name": "احصائية الفحوصات",
+   "sql": "SELECT FullName & '' AS [القائم بالفحص], RefNo & '' AS [رقم المرجع], BatchNo+0 AS [المجموعة], DateValue(ReceivedDate) AS [تاريخ الورود], AgencyName & '' AS [الجهة], Samples+0 AS [عدد العينات], PosCount+0 AS [الإيجابي], NegCount+0 AS [السلبي], UnkCount+0 AS [لم يتبين], ProcTraces+0 AS [عدد الآثار], VisitTraces+0 AS [عدد آثار الانتقال], Tests+0 AS [عدد الفحوص], PosTests+0 AS [الفحص الإيجابي], NegTests+0 AS [الفحص السلبي], IIf(SharedFlag=1,\"نعم\",\"\") AS [مشتركة]\r\nFROM qStatBase\r\nWHERE [Yr]=[TempVars]![StatYear] AND [Mo] Between [TempVars]![StatFrom] And [TempVars]![StatTo]\r\nORDER BY ReceivedDate, RefNo, FullName;"
+  },
+  {
+   "name": "الاحصائية العامة",
+   "sql": "SELECT Sum(VisitCases) AS [عدد قضايا الانتقال], Sum(VisitTraces) AS [عدد آثار الانتقال], Sum(ProcCases) AS [عدد قضايا المعالجة], Sum(Samples) AS [عدد العينات], Sum(PosCount) AS [الإيجابي], Sum(NegCount) AS [السلبي], Sum(UnkCount) AS [لم يتبين], Sum(ProcTraces) AS [عدد الآثار], Count(*) AS [المنجز من القضايا], Sum(Tests) AS [عدد الفحوص], Sum(PosTests) AS [الفحص الإيجابي], Sum(NegTests) AS [الفحص السلبي]\r\nFROM qStatBase\r\nWHERE [Yr]=[TempVars]![StatYear] AND [Mo] Between [TempVars]![StatFrom] And [TempVars]![StatTo];"
+  },
+  {
+   "name": "qReviewCases",
+   "sql": "SELECT ReviewerID, CaseID, Count(*) AS Batches\r\nFROM tblBatches\r\nWHERE ReviewerID Is Not Null AND Year(ReceivedDate)=[TempVars]![StatYear] AND Month(ReceivedDate) Between [TempVars]![StatFrom] And [TempVars]![StatTo]\r\nGROUP BY ReviewerID, CaseID;"
+  },
+  {
+   "name": "احصائية المراجعين",
+   "sql": "SELECT u.FullName & '' AS [القائم بالمراجعة], Count(*) AS [عدد القضايا], Sum(q.Batches) AS [عدد المجموعات]\r\nFROM qReviewCases AS q INNER JOIN tblUsers AS u ON q.ReviewerID = u.UserID\r\nGROUP BY u.FullName\r\nORDER BY u.FullName;"
+  },
+  {
+   "name": "احصائية القضايا حسب الجهات",
+   "sql": "TRANSFORM Count(c.CaseID) AS n\r\nSELECT IIf(a.AgencyName Is Null,'(بلا جهة)',a.AgencyName) AS [الجهة], Count(c.CaseID) AS [الإجمالي]\r\nFROM tblCases AS c LEFT JOIN tblAgencies AS a ON c.AgencyID = a.AgencyID\r\nWHERE Year(c.CaseDate)=2026\r\nGROUP BY IIf(a.AgencyName Is Null,'(بلا جهة)',a.AgencyName)\r\nPIVOT Format(c.CaseDate,'mm') IN ('01','02','03','04','05','06','07','08','09','10','11','12');"
+  },
+  {
+   "name": "qStockBalance",
+   "sql": "SELECT m.MaterialID, m.MaterialName & '' AS [المادة], m.Unit & '' AS [الوحدة], m.MinStock, IIf(Sum(IIf(s.MoveType=1,s.Qty,IIf(s.MoveType=2,-s.Qty,0))) Is Null,0,Sum(IIf(s.MoveType=1,s.Qty,IIf(s.MoveType=2,-s.Qty,0)))) AS Balance, Min(IIf(s.MoveType=1 And s.ExpiryDate>=Date(),s.ExpiryDate,Null)) AS NearestExpiry, Max(s.MoveDate) AS LastMove\r\nFROM tblMaterials AS m LEFT JOIN tblStockMoves AS s ON m.MaterialID = s.MaterialID\r\nWHERE m.IsActive=True\r\nGROUP BY m.MaterialID, m.MaterialName, m.Unit, m.MinStock\r\nORDER BY m.MaterialName;"
+  },
+  {
+   "name": "qStockMoves",
+   "sql": "SELECT s.MoveID, s.MaterialID, s.MoveDate, IIf(s.MoveType=1,'إضافة','صرف') AS MoveName, s.MoveType, s.Qty, s.LotNo, s.ExpiryDate, l.LocationName, u.FullName, s.Notes\r\nFROM (tblStockMoves AS s LEFT JOIN tblStorageLocations AS l ON s.LocationID = l.LocationID) LEFT JOIN tblUsers AS u ON s.UserID = u.UserID\r\nORDER BY s.MoveDate DESC, s.MoveID DESC;"
+  },
+  {
+   "name": "qCaseFind",
+   "sql": "SELECT CaseID, RefNo, ForensicNo, Format(CaseDate,'yyyy/mm/dd') AS Dated\r\nFROM tblCases\r\nORDER BY CaseID DESC;"
+  }
+ ],
+ "dbprops": {
+  "AppTitle": "قسم الإظهار الكيميائي",
+  "StartupForm": "frmMain"
+ },
+ "vbaProjectName": "برنامج الإظهار الكيميائي الجديد",
+ "modules": [
+  "modApp",
+  "modReport",
+  "modDashboard"
+ ],
+ "forms": [
+  "frmBatchesSub",
+  "frmMain",
+  "frmSamples",
+  "frmTraces",
+  "frmRunSamplesSub",
+  "frmRuns",
+  "frmBatchStaff",
+  "frmStockBalanceSub",
+  "frmStockMovesSub",
+  "frmStock",
+  "frmDashboard",
+  "frmMaterials",
+  "frmUsers"
+ ]
+}
